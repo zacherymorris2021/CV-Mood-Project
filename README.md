@@ -43,7 +43,7 @@ Step 2: Once entered, you will be navigated to spotify authentication page. Logi
 ![Image of the authentication page after done](https://i.imgur.com/lNQ92fC.png)
 
 Copy the link of that page  and go to terminal. which will currently look like this:
-[Image of the terminal in the process](https://i.imgur.com/WtXFZ5q.png)
+![Image of the terminal in the process](https://i.imgur.com/WtXFZ5q.png)
 
 Paste that link into the terminal and authentication should be verified. You should be naviageted to the image uploading page in the applications. Where you can upload a image (only .jpg files) and get the perdiction as well as the created playlist.
 
