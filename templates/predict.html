@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Computer Vision Mood Songs</title>
+    <style>
+        * {
+            font-size: 30px
+        }
+    </style>
+</head>
+
+<body>
+    <input id='image-selector' type='file'>
+    <button id = predict-button>Predict</button>
+    <p style="font-weight:bold">Predictions: <span id="predictions"></span></p>
+    <img id ="selected-image" src=""/>
+    <!-- <div id="buttonDiv"></div> -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        let base64Image;
+        $('#image-selector').change(function(){
+            let reader = new FileReader();
+            reader.onload = function(e){
+                let dataURL = reader.result;
+                $('#selected-image').attr("src", dataURL);
+                base64Image = dataURL.replace("data:image/jpeg;base64,","");
+                console.log('image',base64Image);
+            }
+            reader.readAsDataURL($("#image-selector")[0].files[0]);
+            $("#predictions").text("");
+        });
+
+        $("#predict-button").click(function(event){
+            let message = {
+                image: base64Image
+            }
+            console.log('Message:',message)
+            $.post('http://0.0.0.0:5000/predict', JSON.stringify(message), function(response){
+                console.log(response)
+                var playlist = response.playlist
+                
+                $("#predictions").html("<br/>"+response.prediction[0]+"<br/>"+response.prediction[1]+"<br/>"+response.prediction[2]+"<br/>"+response.prediction[3])
+                var r = $('<input/>').attr({
+                         type: "button",
+                         id: "moodPlaylistButton",
+                         value: "View Created Playlist",
+                         onclick: window.open(response.playlist)
+                    });
+
+                $("#buttonDiv").append(r);
+                console.log('response',response);
+            })
+        })
+
+    </script>
+</body>
+
+
+
+
+
+</html>
