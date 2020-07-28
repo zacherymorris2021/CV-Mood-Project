@@ -1,7 +1,7 @@
 # Mood Detection: Linking Extracted Mood From Images to Spotify Songs
 To look at research report click [here](https://github.com/zacherymorris2021/CVMoodProject/blob/master/research_report.pdf)
 
-Because of the large trained model file, it was not possible to deploy the application through heroku. Infact it was not possible to even upload the file into Github. Therefore, if you are interested in trying ou the application, please follow the following steps to clone the repo, download the trained model and to run the application locally.
+Because of the large trained model file, it was not possible to deploy the application through heroku. Infact it was not possible to even upload the file into Github. Therefore, if you are interested in trying out the application, please follow the following steps to clone the repo, download the trained model and to run the application locally.
 
 ## Installation and Setup
 
