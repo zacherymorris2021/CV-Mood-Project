@@ -3,7 +3,7 @@ Flask==1.0
 gunicorn==19.5.0
 idna==2.8
 itsdangerous==0.24
-Jinja2==2.10
+Jinja2==2.11.3
 numpy==1.17.4
 requests==2.22.0
 spotipy==2.4.4
